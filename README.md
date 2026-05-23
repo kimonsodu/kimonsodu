@@ -41,8 +41,13 @@ ecosystem, occasionally venturing into LLM tooling and design systems.
 ### stats
 
 <p align="center">
-  <img height="170" src="https://github-readme-stats.vercel.app/api?username=kimonsodu&show_icons=true&theme=tokyonight&hide_border=true&include_all_commits=true&cache_seconds=86400" alt="stats"/>
-  <img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=kimonsodu&layout=compact&theme=tokyonight&hide_border=true&langs_count=8&cache_seconds=86400" alt="top langs"/>
+  <img src="./profile-summary-card-output/nord_dark/3-stats.svg" alt="stats"/>
+  <img src="./profile-summary-card-output/nord_dark/2-most-commit-language.svg" alt="most commit language"/>
+</p>
+
+<p align="center">
+  <img src="./profile-summary-card-output/nord_dark/1-repos-per-language.svg" alt="repos per language"/>
+  <img src="./profile-summary-card-output/nord_dark/4-productive-time.svg" alt="productive time"/>
 </p>
 
 <p align="center">
