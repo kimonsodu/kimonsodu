@@ -30,27 +30,19 @@ ecosystem, occasionally venturing into LLM tooling and design systems.
 
 ### projects
 
-<p align="center">
-  <a href="https://github.com/kimonsodu/lagsync-website">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=kimonsodu&repo=lagsync-website&theme=tokyonight&hide_border=true" alt="lagsync-website"/>
-  </a>
-  <a href="https://github.com/kimonsodu/LANBuddies">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=kimonsodu&repo=LANBuddies&theme=tokyonight&hide_border=true" alt="LANBuddies"/>
-  </a>
-</p>
-<p align="center">
-  <a href="https://github.com/kimonsodu/voice-controlled-lighting">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=kimonsodu&repo=voice-controlled-lighting&theme=tokyonight&hide_border=true" alt="voice-controlled-lighting"/>
-  </a>
-</p>
+**[lagsync-website](https://github.com/kimonsodu/lagsync-website)** &nbsp;·&nbsp; marketing site for the LagSync browser extension &nbsp; ![Astro](https://img.shields.io/badge/-Astro-FF5D01?style=flat-square&logo=astro&logoColor=white)
+
+**[LANBuddies](https://github.com/kimonsodu/LANBuddies)** &nbsp;·&nbsp; local-network multiplayer companion app &nbsp; ![Flutter](https://img.shields.io/badge/-Flutter-02569B?style=flat-square&logo=flutter&logoColor=white)
+
+**[voice-controlled-lighting](https://github.com/kimonsodu/voice-controlled-lighting)** &nbsp;·&nbsp; voice-driven smart lighting controller &nbsp; ![Java](https://img.shields.io/badge/-Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white)
 
 ---
 
 ### stats
 
 <p align="center">
-  <img height="170" src="https://github-readme-stats.vercel.app/api?username=kimonsodu&show_icons=true&theme=tokyonight&hide_border=true&count_private=true&include_all_commits=true"/>
-  <img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=kimonsodu&layout=compact&theme=tokyonight&hide_border=true&langs_count=8"/>
+  <img height="170" src="https://github-readme-stats.vercel.app/api?username=kimonsodu&show_icons=true&theme=tokyonight&hide_border=true&include_all_commits=true&cache_seconds=86400" alt="stats"/>
+  <img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=kimonsodu&layout=compact&theme=tokyonight&hide_border=true&langs_count=8&cache_seconds=86400" alt="top langs"/>
 </p>
 
 <p align="center">
