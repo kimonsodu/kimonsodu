@@ -22,7 +22,7 @@ occasionally venturing into LLM tooling and design systems.
 
 <p align="center">
   <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=ts,js,java,kotlin,py,dart,cs,react,nextjs,astro,tailwind,flutter,nodejs,spring,androidstudio,mysql,firebase,gcp,vercel,jenkins,git,github,vite,vitest,playwright,linux,bash,figma,vscode&theme=light&perline=15" alt="stack"/>
+    <img src="https://skillicons.dev/icons?i=ts,js,java,kotlin,py,dart,cs,react,nextjs,astro,tailwind,flutter,nodejs,spring,androidstudio,mysql,firebase,gcp,vercel,jenkins,git,github,vite,linux,bash,figma,vscode&theme=light&perline=14" alt="stack"/>
   </a>
 </p>
 
