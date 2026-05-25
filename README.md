@@ -1,6 +1,6 @@
 <!-- Header banner -->
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12&height=200&section=header&text=Simon&fontSize=70&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=full-stack%20dev%20%E2%80%A2%20Stockholm&descAlignY=60&descSize=18" alt="banner"/>
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12&height=200&section=header&text=Simon&fontSize=70&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=full-stack%20dev&descAlignY=60&descSize=18" alt="banner"/>
 </p>
 
 <!-- Typing SVG -->
@@ -12,9 +12,9 @@
 
 ### whoami
 
-Full-stack engineer based in Stockholm. I like clean APIs, fast UIs, and tools
-that make the boring parts disappear. Currently deep in the Next.js + React
-ecosystem, occasionally venturing into LLM tooling and design systems.
+Full-stack engineer. I like clean APIs, fast UIs, and tools that make the
+boring parts disappear. Currently deep in the Next.js + React ecosystem,
+occasionally venturing into LLM tooling and design systems.
 
 ---
 
@@ -41,21 +41,16 @@ ecosystem, occasionally venturing into LLM tooling and design systems.
 ### stats
 
 <p align="center">
-  <img src="./profile-summary-card-output/nord_dark/3-stats.svg" alt="stats"/>
+  <img src="./profile-summary-card-output/nord_dark/1-repos-per-language.svg" alt="repos per language"/>
   <img src="./profile-summary-card-output/nord_dark/2-most-commit-language.svg" alt="most commit language"/>
 </p>
 
 <p align="center">
-  <img src="./profile-summary-card-output/nord_dark/1-repos-per-language.svg" alt="repos per language"/>
   <img src="./profile-summary-card-output/nord_dark/4-productive-time.svg" alt="productive time"/>
 </p>
 
 <p align="center">
   <img src="https://streak-stats.demolab.com?user=kimonsodu&theme=tokyonight&hide_border=true" alt="streak"/>
-</p>
-
-<p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=kimonsodu&theme=tokyonight&no-frame=true&no-bg=true&column=7&margin-w=10" alt="trophies"/>
 </p>
 
 ---
