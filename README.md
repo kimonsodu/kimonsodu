@@ -1,20 +1,23 @@
 <!-- Header banner -->
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:B84721,100:1F56B8&height=200&section=header&text=Simon&fontSize=70&fontColor=F2EDE3&animation=fadeIn&fontAlignY=38&desc=full-stack%20dev&descAlignY=60&descSize=18" alt="banner"/>
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:B84721,100:1F56B8&height=200&section=header&text=Simon&fontSize=70&fontColor=F2EDE3&animation=fadeIn&fontAlignY=38&desc=backend%20%26%20fullstack%20engineer&descAlignY=60&descSize=18" alt="banner"/>
 </p>
 
 <!-- Typing SVG -->
 <p align="center">
   <a href="https://github.com/kimonsodu">
-    <img src="https://readme-typing-svg.demolab.com?font=DM+Mono&weight=500&size=22&duration=2800&pause=900&color=B84721&center=true&vCenter=true&width=520&lines=Building+for+the+web;TypeScript+all+the+way+down;Next.js+%E2%9D%A4%EF%B8%8F+React;Always+shipping%2C+always+learning" alt="typing"/>
+    <img src="https://readme-typing-svg.demolab.com?font=DM+Mono&weight=500&size=22&duration=2800&pause=900&color=B84721&center=true&vCenter=true&width=560&lines=B.Sc.+Computer+%26+Systems+Science+%E2%80%942026;Backend+%2B+fullstack+engineer;Java+%2B+Spring+Boot;Python+%E2%80%A2+REST+APIs;React+%2B+TypeScript;Open+to+work" alt="typing"/>
   </a>
 </p>
 
 ### whoami
 
-Full-stack engineer. I like clean APIs, fast UIs, and tools that make the
-boring parts disappear. Currently deep in the Next.js + React ecosystem,
-occasionally venturing into LLM tooling and design systems.
+B.Sc. in Computer &amp; Systems Science, Stockholm University (Jan 2026).
+Open to roles in **systems**, **fullstack**, **backend**, and **test**
+development. I build robust scalable systems — APIs, integrations,
+databases — and ship with agile teams.
+
+**Working stack:** Java / Spring Boot · Python · React / TypeScript · REST · MariaDB · OAuth 2.0 · Jenkins CI/CD
 
 ---
 
