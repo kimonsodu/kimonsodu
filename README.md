@@ -56,10 +56,6 @@ databases — and ship with agile teams.
   <img src="https://github-readme-streak-stats-eta-ten-63.vercel.app?user=kimonsodu&background=F2EDE3&border=14161B33&stroke=14161B33&ring=B84721&fire=B84721&currStreakNum=14161B&currStreakLabel=B84721&sideNums=14161B&sideLabels=14161B&dates=57545B&excludeDaysLabel=57545B" alt="streak"/>
 </p>
 
-<p align="center">
-  Enable <strong>Private contributions</strong> in your GitHub profile settings to include private activity in this streak card.
-</p>
-
 ---
 
 ### contribution snake
