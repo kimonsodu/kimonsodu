@@ -44,12 +44,12 @@ databases — and ship with agile teams.
 ### stats
 
 <p align="center">
-  <img src="./profile-summary-card-output/swift/1-repos-per-language.svg" alt="repos per language"/>
-  <img src="./profile-summary-card-output/swift/2-most-commit-language.svg" alt="most commit language"/>
+  <img src="./profile-cards-custom/1-repos-per-language.svg" alt="repos per language"/>
+  <img src="./profile-cards-custom/2-most-commit-language.svg" alt="most commit language"/>
 </p>
 
 <p align="center">
-  <img src="./profile-summary-card-output/swift/4-productive-time.svg" alt="productive time"/>
+  <img src="./profile-cards-custom/4-productive-time.svg" alt="productive time"/>
 </p>
 
 <p align="center">
