@@ -25,7 +25,7 @@ databases — and ship with agile teams.
 
 <p align="center">
   <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=ts,js,java,kotlin,py,dart,cs,react,nextjs,astro,tailwind,flutter,nodejs,spring,androidstudio,supabase,mysql,firebase,gcp,vercel,jenkins,git,github,vite,linux,bash,figma,vscode&theme=light&perline=14" alt="stack"/>
+    <img src="https://skillicons.dev/icons?i=ts,js,java,kotlin,py,dart,cs,react,nextjs,astro,tailwind,flutter,nodejs,spring,maven,gradle,fastapi,supabase,mysql,firebase,gcp,vercel,jenkins,githubactions,sentry,git,github,vite,vitest,pytorch,androidstudio,idea,linux,bash,figma,vscode&theme=light&perline=14" alt="stack"/>
   </a>
 </p>
 
