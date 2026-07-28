@@ -17,7 +17,7 @@ Open to roles in **systems**, **fullstack**, **backend**, and **test**
 development. I build robust scalable systems — APIs, integrations,
 databases — and ship with agile teams.
 
-**Working stack:** Java / Spring Boot · Python · React / TypeScript · REST · MariaDB · OAuth 2.0 · Jenkins CI/CD
+**Working stack:** TypeScript · Angular · React / Next.js · Java / Spring Boot · Python · C# / .NET · REST · Postgres / MariaDB · OAuth 2.0 · Docker Compose · CI/CD
 
 ---
 
@@ -25,7 +25,7 @@ databases — and ship with agile teams.
 
 <p align="center">
   <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=ts,js,java,kotlin,py,dart,cs,react,nextjs,astro,tailwind,flutter,nodejs,spring,maven,gradle,fastapi,supabase,mysql,firebase,gcp,vercel,jenkins,githubactions,sentry,git,github,vite,vitest,pytorch,androidstudio,idea,linux,bash,figma,vscode&theme=light&perline=14" alt="stack"/>
+    <img src="https://skillicons.dev/icons?i=ts,js,java,kotlin,py,cs,dotnet,php,dart,angular,react,nextjs,astro,tailwind,flutter,nodejs,spring,fastapi,supabase,postgres,mysql,firebase,docker,vercel,gcp,githubactions,jenkins,linux,bash,powershell,maven,gradle,pnpm,git,github,vite,vitest,sentry,androidstudio,idea,figma,vscode&theme=light&perline=14" alt="stack"/>
   </a>
 </p>
 
