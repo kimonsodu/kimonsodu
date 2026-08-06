@@ -33,6 +33,23 @@ jobs:
           grep -q "Total Contributions" profile-cards-custom/5-streak.svg
           grep -q "Current Streak" profile-cards-custom/5-streak.svg
 
+      # The card counts all-time from account creation; the 3D skyline counts
+      # GitHub's rolling year. Side by side those disagree, so rescope the card
+      # to the same window using the same GraphQL field the skyline reads.
+      - name: rescope total to the rolling year
+        env:
+          GH_TOKEN: ${{ secrets.PROFILE_TOKEN }}
+        run: |
+          read -r TOTAL FROM TO <<< "$(gh api graphql -f query='
+            { user(login: "kimonsodu") { contributionsCollection { contributionCalendar {
+                totalContributions
+                weeks { contributionDays { date } }
+            } } } }' --jq '.data.user.contributionsCollection.contributionCalendar
+              | "\(.totalContributions) \(.weeks[0].contributionDays[0].date) \(.weeks[-1].contributionDays[-1].date)"')"
+          echo "rolling year: $TOTAL contributions, $FROM to $TO"
+          test "$TOTAL" -ge 300
+          STREAK_TOTAL="$TOTAL" STREAK_FROM="$FROM" STREAK_TO="$TO" node scripts/patch-streak.mjs
+
       - name: commit and push
         run: |
           git config user.name "github-actions[bot]"
