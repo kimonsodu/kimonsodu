@@ -57,10 +57,6 @@ Public code:
 ### stats
 
 <p align="center">
-  <img src="./profile-cards-custom/1-repos-per-language.svg" alt="repos per language"/>
-</p>
-
-<p align="center">
   <img src="./profile-cards-custom/4-productive-time.svg" alt="productive time"/>
 </p>
 
