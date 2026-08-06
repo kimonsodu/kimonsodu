@@ -1,0 +1,54 @@
+name: generate 3d contribution card
+
+on:
+  # Weekly. A rolling-year skyline looks the same day to day, and the SVG is
+  # ~200 KB of poorly-delta-compressing markup, so daily would bloat history
+  # for no visible change. 01:00 sits after profile-summary-cards (00:00) and
+  # streak (00:30) so the three main pushers never overlap.
+  schedule:
+    - cron: "0 1 * * 1"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      # PROFILE_TOKEN, not the built-in GITHUB_TOKEN. contributionsCollection is
+      # identity-scoped: the built-in token has no user identity and returns only
+      # the ~86 public contributions instead of the real 878.
+      - uses: yoshi389111/github-profile-3d-contrib@v0.9.3
+        env:
+          GITHUB_TOKEN: ${{ secrets.PROFILE_TOKEN }}
+          USERNAME: kimonsodu
+          SETTING_JSON: ./profile-3d-settings.json
+
+      # A token that lost its scopes still renders a perfectly valid card, just
+      # a nearly empty one. Fail loudly instead of committing that.
+      - name: verify private contributions were counted
+        run: |
+          node -e '
+          const svg = require("fs").readFileSync("profile-3d-contrib/profile-3d.svg", "utf8");
+          const m = svg.match(/>([\d,]+)<\/text><text[^>]*>contributions</);
+          if (!m) { console.error("no contribution total found in SVG"); process.exit(1); }
+          const total = Number(m[1].replace(/,/g, ""));
+          console.log("total contributions:", total);
+          if (total < 300) { console.error("public-only data - check PROFILE_TOKEN scopes and the private contributions profile setting"); process.exit(1); }
+          '
+
+      - name: commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add profile-3d-contrib
+          if git diff --staged --quiet; then
+            echo "no changes to commit"
+            exit 0
+          fi
+          git commit -m "chore: update 3d contribution card"
+          # The summary-cards and streak workflows also commit to main.
+          git pull --rebase --autostash
+          git push

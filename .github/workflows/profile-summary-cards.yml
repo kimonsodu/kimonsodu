@@ -21,14 +21,23 @@ jobs:
           USERNAME: kimonsodu
           AUTO_PUSH: false
 
+      # The action only emits preset themes. The README renders the palette
+      # matched copies in profile-cards-custom/, so regenerate those from the
+      # fresh output rather than leaving hand-made files to go stale.
+      - name: recolour cards to profile palette
+        run: node scripts/recolor-cards.mjs
+
       - name: commit and push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add profile-summary-card-output
+          git add profile-summary-card-output profile-cards-custom
           if git diff --staged --quiet; then
             echo "no changes to commit"
             exit 0
           fi
           git commit -m "chore: update profile summary cards"
+          # The streak workflow also commits to main, so main can have moved
+          # since checkout.
+          git pull --rebase --autostash
           git push

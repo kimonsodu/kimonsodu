@@ -6,7 +6,7 @@
 <!-- Typing SVG -->
 <p align="center">
   <a href="https://github.com/kimonsodu">
-    <img src="https://readme-typing-svg.demolab.com?font=DM+Mono&weight=500&size=22&duration=2800&pause=900&color=B84721&center=true&vCenter=true&width=560&lines=B.Sc.+Computer+%26+Systems+Science+%E2%80%942026;Fullstack+engineer+%E2%80%94+TypeScript+%2B+Python;Angular+%E2%80%A2+React+%2F+Next.js+%E2%80%A2+Node;Java+%2B+Spring+Boot+%E2%80%A2+C%23+%2F+.NET;Browser+extension+with+1%2C500%2B+users;Live+SaaS+with+Stripe+billing;Open+to+work" alt="typing"/>
+    <img src="https://readme-typing-svg.demolab.com?font=DM+Mono&weight=500&size=22&duration=2800&pause=900&color=B84721&center=true&vCenter=true&width=560&lines=B.Sc.+Computer+%26+Systems+Science+%E2%80%942026;Fullstack+engineer+%E2%80%94+TypeScript+%2B+Python;Angular+%E2%80%A2+React+%2F+Next.js+%E2%80%A2+Node;Java+%2B+Spring+Boot+%E2%80%A2+C%23+%2F+.NET;Browser+extension+with+2%2C000%2B+users;Live+SaaS+with+Stripe+billing;Open+to+work" alt="typing"/>
   </a>
 </p>
 
@@ -14,9 +14,9 @@
 
 B.Sc. in Computer &amp; Systems Science, Stockholm University (Jan 2026).
 I work across the whole stack — front end, back end and data — and I ship
-complete products on my own: a browser extension with **1,500+ users** across
-five stores, a live SaaS with Stripe billing, and native Windows and Android
-apps. Open to **fullstack**, **backend**, **systems** and **test** roles.
+complete products on my own: a browser extension with **2,000+ users** on the
+Chrome Web Store alone and shipped to five stores, a live SaaS with Stripe
+billing, and native Windows and Android apps. Open to **fullstack**, **backend**, **systems** and **test** roles.
 
 **Working stack:** TypeScript · Angular · React / Next.js · Astro · Node · Python · Java / Spring Boot · C# / .NET · Kotlin · REST · Supabase / Postgres / MariaDB · OAuth 2.0 · Stripe · Docker Compose · CI/CD
 
@@ -40,7 +40,7 @@ Shipped, live — source private:
 
 **[Orbital](https://wroughtery.com/orbital)** &nbsp;·&nbsp; motion-sickness relief overlay — Windows app live, Android companion in closed testing &nbsp; ![.NET](https://img.shields.io/badge/-.NET%208-512BD4?style=flat-square&logo=dotnet&logoColor=white) ![Kotlin](https://img.shields.io/badge/-Kotlin-7F52FF?style=flat-square&logo=kotlin&logoColor=white)
 
-**[LagSync](https://lagsync.com)** &nbsp;·&nbsp; Bluetooth audio-sync extension, 1,500+ users across five stores &nbsp;·&nbsp; site source: [lagsync-website](https://github.com/kimonsodu/lagsync-website) &nbsp; ![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white) ![Astro](https://img.shields.io/badge/-Astro-FF5D01?style=flat-square&logo=astro&logoColor=white)
+**[LagSync](https://lagsync.com)** &nbsp;·&nbsp; Bluetooth audio-sync extension, 2,000+ Chrome Web Store users, shipped to five stores &nbsp;·&nbsp; site source: [lagsync-website](https://github.com/kimonsodu/lagsync-website) &nbsp; ![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white) ![Astro](https://img.shields.io/badge/-Astro-FF5D01?style=flat-square&logo=astro&logoColor=white)
 
 **[Wroughtery](https://wroughtery.com)** &nbsp;·&nbsp; studio site &amp; design system for the tools above &nbsp; ![Angular](https://img.shields.io/badge/-Angular-DD0031?style=flat-square&logo=angular&logoColor=white)
 
@@ -66,7 +66,27 @@ Public code:
 </p>
 
 <p align="center">
-  <img src="https://github-readme-streak-stats-eta-ten-63.vercel.app?user=kimonsodu&background=F2EDE3&border=14161B33&stroke=14161B33&ring=B84721&fire=B84721&currStreakNum=14161B&currStreakLabel=B84721&sideNums=14161B&sideLabels=14161B&dates=57545B&excludeDaysLabel=57545B" alt="streak"/>
+  <img src="./profile-cards-custom/5-streak.svg" alt="streak"/>
+</p>
+
+---
+
+### contribution skyline
+
+<p align="center">
+  <img src="./profile-3d-contrib/profile-3d.svg" alt="3d contribution graph"/>
+</p>
+
+---
+
+### contribution snake
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/kimonsodu/kimonsodu/output/github-contribution-grid-snake-dark.svg"/>
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/kimonsodu/kimonsodu/output/github-contribution-grid-snake.svg"/>
+    <img src="https://raw.githubusercontent.com/kimonsodu/kimonsodu/output/github-contribution-grid-snake.svg" alt="snake"/>
+  </picture>
 </p>
 
 ---
