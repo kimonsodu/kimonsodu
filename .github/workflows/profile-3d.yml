@@ -39,6 +39,74 @@ jobs:
           if (total < 300) { console.error("public-only data - check PROFILE_TOKEN scopes and the private contributions profile setting"); process.exit(1); }
           '
 
+      # The generator's donut and radar read commitContributionsByRepository,
+      # which GitHub only ever fills with public repos, so they described 4 public
+      # repos while the calendar counted 878 contributions. Recompute both from
+      # sources that do see private work and redraw them.
+      - name: recompute donut and radar with private data
+        env:
+          GH_TOKEN: ${{ secrets.PROFILE_TOKEN }}
+        run: |
+          set -euo pipefail
+
+          # Read the window off the calendar the card actually draws. GitHub pads
+          # the first week back to a Sunday and anchors to the profile timezone,
+          # so `date -u -d '1 year ago'` lands 0-6 days late and would measure the
+          # donut and radar over a narrower span than the squares beside them.
+          BOUNDS=$(gh api graphql -f query='{ user(login:"kimonsodu") { contributionsCollection { contributionCalendar {
+            weeks { contributionDays { date } } } } } }' \
+            --jq '.data.user.contributionsCollection.contributionCalendar
+                  | "\(.weeks[0].contributionDays[0].date) \(.weeks[-1].contributionDays[-1].date)"')
+          read -r FROM TO <<< "$BOUNDS"
+          echo "window: $FROM to $TO"
+
+          GHID=$(gh api graphql -f query='{ user(login:"kimonsodu"){ id } }' --jq '.data.user.id')
+
+          # Commits need per-repo history; contributionsCollection counts public only.
+          COMMITS=$(gh api graphql -f query="{ viewer { repositories(first:100, ownerAffiliations:OWNER, isFork:false) { nodes {
+            defaultBranchRef { target { ... on Commit {
+              history(since:\"${FROM}T00:00:00Z\", until:\"${TO}T23:59:59Z\", author:{id:\"$GHID\"}) { totalCount }
+            } } } } } } }" \
+            --jq '[.data.viewer.repositories.nodes[] | select(.defaultBranchRef.target != null)
+                   | .defaultBranchRef.target.history.totalCount] | add // 0')
+
+          # Search reaches private repos the token can read.
+          # Assigned first, then read: set -e only catches a failing command
+          # substitution on a plain assignment, not inside a `read <<<`.
+          W="created:$FROM..$TO"
+          COUNTS=$(gh api graphql -f query="{
+            i: search(query:\"author:kimonsodu type:issue $W\", type:ISSUE, first:0){issueCount}
+            p: search(query:\"author:kimonsodu type:pr $W\",    type:ISSUE, first:0){issueCount}
+            r: search(query:\"reviewed-by:kimonsodu type:pr $W\", type:ISSUE, first:0){issueCount}
+          }" --jq '"\(.data.i.issueCount) \(.data.p.issueCount) \(.data.r.issueCount)"')
+          read -r ISSUES PRS REVIEWS <<< "$COUNTS"
+
+          REPOS=$(gh api graphql -f query='{ viewer { repositories(first:100, ownerAffiliations:OWNER) { nodes { createdAt } } } }' \
+            --jq "[.data.viewer.repositories.nodes[] | select(.createdAt >= \"$FROM\")] | length")
+
+          # Repo count by primary language, not bytes: byte-weighting puts HTML on
+          # top off the back of build output.
+          LANGS=$(gh api graphql -f query='{ viewer { repositories(first:100, ownerAffiliations:OWNER, isFork:false) { nodes {
+            primaryLanguage { name color } } } } }' \
+            --jq '[.data.viewer.repositories.nodes[] | select(.primaryLanguage != null) | .primaryLanguage]
+                  | group_by(.name) | map({name:.[0].name, color:.[0].color, value:length})
+                  | sort_by(-.value) | tojson')
+
+          # These queries take the first 100 repos and never paginate. Fine at ~33,
+          # but fail loudly rather than silently under-count the day that changes.
+          HAS_MORE=$(gh api graphql -f query='{ viewer { repositories(first:100, ownerAffiliations:OWNER) { pageInfo { hasNextPage } } } }' \
+            --jq '.data.viewer.repositories.pageInfo.hasNextPage')
+          test "$HAS_MORE" = "false"
+
+          RADAR="{\"commit\":$COMMITS,\"issue\":$ISSUES,\"pullreq\":$PRS,\"review\":$REVIEWS,\"repo\":$REPOS}"
+          echo "radar: $RADAR"
+          test "$COMMITS" -ge 100
+          for v in "$ISSUES" "$PRS" "$REVIEWS" "$REPOS"; do
+            test -n "$v" && test "$v" -ge 0
+          done
+
+          SKYLINE_LANGS="$LANGS" SKYLINE_RADAR="$RADAR" node scripts/patch-skyline.mjs
+
       - name: commit and push
         run: |
           git config user.name "github-actions[bot]"

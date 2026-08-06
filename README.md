@@ -58,7 +58,6 @@ Public code:
 
 <p align="center">
   <img src="./profile-cards-custom/1-repos-per-language.svg" alt="repos per language"/>
-  <img src="./profile-cards-custom/2-most-commit-language.svg" alt="most commit language"/>
 </p>
 
 <p align="center">

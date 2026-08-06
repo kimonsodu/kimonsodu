@@ -24,7 +24,6 @@ const ACCENT = "#B84721";
 
 const CARDS = [
   { file: "1-repos-per-language.svg", accentFills: false },
-  { file: "2-most-commit-language.svg", accentFills: false },
   // The productive-time heat grid paints its dots with a fill="" attribute and
   // its axis labels with an inline `fill:` rule. Both are theme ink, but the
   // dots take the accent colour and only the labels stay ink.
