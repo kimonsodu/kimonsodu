@@ -16,6 +16,9 @@
 //     (GitHub exposes no private issue/PR/review breakdown)
 //   - the star and fork counters are removed; they are public-only too and
 //     both read 0
+//   - the contribution counter is removed; the streak card shows the same
+//     rolling-year total but refreshes daily while this card is weekly, so
+//     side by side the two figures disagree six days out of seven
 //
 // Every edit is guarded: if the generator's markup shifts, this fails the build
 // rather than silently committing a mangled card.
@@ -282,20 +285,32 @@ for (const { iconX, textX, what } of [
   svg = svg.replace(textRe, "");
 }
 
+// --- contribution counter ---------------------------------------------------
+// The streak card reports the same rolling-year total, but it refreshes daily
+// while this card refreshes weekly, so the two figures disagree six days out of
+// seven. Drop this one; the calendar itself still shows the data.
+{
+  const counterRe = /<text[^>]*>[\d,]+<\/text><text[^>]*>contributions<\/text>/;
+  const hits = svg.match(new RegExp(counterRe, "g")) || [];
+  if (hits.length !== 1) {
+    die(`expected exactly 1 contribution counter, found ${hits.length} - generator markup changed`);
+  }
+  svg = svg.replace(counterRe, "");
+}
+
 // --- guards -----------------------------------------------------------------
 for (const kept of [
   "<svg",
-  "contributions",
   '<polygon class="radar"',
   ...slices.map((s) => s.name),
 ]) {
   if (!svg.includes(kept)) die(`patched SVG lost "${kept}"`);
 }
-if (!/>878</.test(svg) && !/>[\d,]+<\/text><text[^>]*>contributions</.test(svg)) {
-  die("contribution total missing after patch");
+if (/>contributions</.test(svg)) {
+  die("contribution counter still present after patch");
 }
 
 writeFileSync(FILE, svg);
 console.log(`patched ${FILE}`);
 console.log(`  donut: ${slices.map((s) => `${s.name} ${s.value}`).join(", ")}`);
-console.log("  removed: star counter, fork counter");
+console.log("  removed: star counter, fork counter, contribution counter");
