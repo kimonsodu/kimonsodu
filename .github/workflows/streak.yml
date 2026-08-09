@@ -22,14 +22,19 @@ jobs:
       - name: fetch streak card
         run: |
           curl -fsS --retry 6 --retry-all-errors --retry-delay 15 --max-time 90 \
-            -o profile-cards-custom/5-streak.svg \
+            -o card.raw \
             "https://github-readme-streak-stats-eta-ten-63.vercel.app?user=kimonsodu&disable_animations=true&background=F2EDE3&border=14161B33&stroke=14161B33&ring=B84721&fire=B84721&currStreakNum=14161B&currStreakLabel=B84721&sideNums=14161B&sideLabels=14161B&dates=57545B&excludeDaysLabel=57545B&cb=${{ github.run_id }}"
+          # The origin runs PHP with display_errors on, so a PHP notice can be
+          # printed ahead of the SVG body. Anything before the root element makes
+          # the file invalid XML and GitHub renders a broken image.
+          perl -0777 -pe 's/\A.*?(?=<svg)//s' card.raw > profile-cards-custom/5-streak.svg
+          rm card.raw
 
       # A cold origin can answer with an error card instead of failing outright,
       # so check for real content before committing over a good file.
       - name: verify the card rendered
         run: |
-          grep -q "<svg" profile-cards-custom/5-streak.svg
+          test "$(head -c 4 profile-cards-custom/5-streak.svg)" = "<svg"
           grep -q "Total Contributions" profile-cards-custom/5-streak.svg
           grep -q "Current Streak" profile-cards-custom/5-streak.svg
 
